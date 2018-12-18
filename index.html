@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Colector Clone</title>
+</head>
+<body>
+
+    <p>Num</p>    
+    <p>Score</p>
+
+    <p id="pg1" >Click One </p>
+    <p id="pg2" >Click Two </p>
+    <p id="pg4" >Click Tree </p>
+    <p id="pg4" >Click Four </p>
+
+        <p>Win</p>
+        <p>Losses</p>
+    
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script> 
+
+
+var score = 0;
+var wins = 0;
+var losses = 0;
+var ranNum = 0; 
+
+var gem1 = 0;
+var gem2 = 0;
+var gem3 = 0;
+var gem4 = 0;
+
+ranNum = Math.floor(Math.random() * 50 + 50); 
+console.log(ranNum);
+
+function gLogic() { 
+    if (ranNum === score) { 
+        wins++
+        score = 0; 
+        ranNum = 0; 
+        console.log("You win!!!")
+    } else if (score > ranNum) { 
+        losses++
+        score = 0;
+        ranNum = 0; 
+        console.log("You lose")
+
+    } else { 
+        console.log("baby steps!!!")
+    }
+
+}
+
+function gameStart() { 
+
+    $("#pg1").on("click", function () {
+    gem1 += 10;
+    console.log(gem1);
+    
+    })
+    $("#pg2").on("click", function () {
+    gem2 += 5;
+    console.log(gem2);
+    
+    })
+    $("#pg3").on("click", function () {
+    gem3 += 3; 
+    console.log(gem3);
+    
+    })
+    $("#pg4").on("click", function () {
+    gem4 += 8;
+    console.log(gem4);
+    
+    })
+
+$("p").on("click", function () {
+    score = gem1 + gem2 + gem3 + gem4;
+    console.log("Your total score is " + score);
+    gLogic();
+})
+
+}
+gameStart();
+
+
+
+</script>
+</html>
