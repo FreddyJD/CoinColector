@@ -1,1 +1,3 @@
-# Crystal-Colector-Clone
+# Crystal-Colector-Clone 
+Coin Colector -- Simple JS/Jquery App 
+
